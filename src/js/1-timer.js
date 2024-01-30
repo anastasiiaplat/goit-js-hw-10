@@ -1,3 +1,8 @@
+
+import flatpickr from "flatpickr";
+
+import "flatpickr/dist/flatpickr.min.css";
+
 document.addEventListener('DOMContentLoaded', function () {
   const startBtn = document.querySelector('button[data-action-start]');
   const pauseBtn = document.querySelector('button[data-action-pause]');
