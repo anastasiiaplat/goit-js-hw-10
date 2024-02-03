@@ -41,14 +41,6 @@ const options = {
       btnStart.disabled = false;
     }
   },
-
-  onChange(selectedDates) {
-    if (selectedDates.length === 0) {
-      btnStart.disabled = true;
-    } else {
-      btnStart.disabled = false;
-    }
-  },
 };
 
 function convertMs(ms) {
@@ -78,9 +70,11 @@ function onTimer(difference) {
 }
 
 function onStart() {
+  btnStart.disabled = true; 
   timerInterval = setInterval(() => {
     if (difference <= 0) {
       clearInterval(timerInterval);
+      btnStart.disabled = true; 
     } else {
       onTimer(difference);
       difference -= 1000;
